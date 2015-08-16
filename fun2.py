@@ -1,15 +1,16 @@
 # Borrowed from https://realpython.com/learn/python-first-steps/
 
 ##############################################################################
-#### Modify the variables so that all of the statements evaluate to True. ####
+#### Modify the variables so that all of the statements evaluate to True. ###
+###(You had to give values for all the variables) ####
 ##############################################################################
 
-var1 = 
-var2 = 
-var3 = 
-var4 = 
-var5 = 
-var6 = 
+var1 = 5
+var2 = 'pridnns'
+var3 = [7, 5, 2, 4, 7]
+var4 = ('5', 'f', 'Hello, Python!')
+var5 = {"tuna":"fish", "happy":7, "egg":"salad"}
+var6 = 8.0
 
 ###############################################
 #### Don't edit anything below this comment ###
@@ -40,4 +41,5 @@ print(7 in var5.values())
 print(var5.get("egg") == "salad")
 print(len(var5) == 3)
 var5["tuna"] = "fish"
+
 print(len(var5) == 3)

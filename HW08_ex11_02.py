@@ -7,7 +7,7 @@
 # >>> h = histogram('a')
 # >>> print h
 # {'a': 1}
-# >>> h.get('a', 0)
+# >>> h.get('a', 0)     # 0 is the default
 # 1
 # >>> h.get('b', 0)
 # 0
@@ -23,8 +23,6 @@
 
 # Body
 
-pledge_histogram = {}
-
 def histogram_old(s):
     d = dict()
     for c in s:
@@ -35,19 +33,31 @@ def histogram_old(s):
     return d
 
 def histogram_new(s):
-    pass
+    d = dict()
+    for c in s:                 # Go through every item of the list
+        d[c] = 1 + d.get(c, 0)  # For every occurrence of the item, it will add 1
+    return d                    # t's important to return it or there's nothing
+    
 
 def get_pledge_list():
-    """ Opens pledge.txt and converts to a list, each item is a word in 
+    """Opens pledge.txt and converts to a list, each item is a word in 
     the order it appears in the original file. returns the list.
     """
     # Your code here.
-    pass
-    #return pledge_list (uncomment this)
+    full_list = []
+    with open('pledge.txt') as f:
+       
+        for line in f:
+            line1 = line.split()       
+            full_list += line1
+        return full_list      
+
+         
+    
 
 ##############################################################################
 def main():  # DO NOT CHANGE BELOW
+    # print histogram_old(get_pledge_list())
     print histogram_new(get_pledge_list())
-
 if __name__ == '__main__':
     main()
